@@ -1,0 +1,22 @@
+t<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        >  <!-- routerLinkActive to activate the active router style. exact:true will match only the home router link -->
+        <a routerLink="/">Home</a></li>
+        <li role="presentation" 
+        routerLinkActive="active"
+        ><a routerLink="/servers">Servers</a></li> <!-- routerlink special attribute to use for navigation instead of href-->
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet> <!-- special directive to activate routers -->
+    </div>
+  </div>
+</div>

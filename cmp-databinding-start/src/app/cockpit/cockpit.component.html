@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+      <label>Server Name Two way binding</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <label>Server Name with Reference</label>
+      <input type="text" class="form-control" 
+        #serverNameInput> <!-- @serverNameInputs holds a Reference  to this entire input element, Can use instead of the 2 way binding from ngModel-->
+      <label>Server Content</label>
+      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <label>Server Content ViewChild</label>
+      <input type="text" class="form-control" 
+        #serverContentInput>
+      <br>
+      <button
+        class="btn btn-primary"
+        (click)="onAddServer()">Add Server</button>
+        <button
+        class="btn btn-primary"
+        (click)="onAddServerFromReference(serverNameInput)">Add Server using reference</button>
+        <button
+        class="btn btn-primary"
+        (click)="onAddServerWithViewChild(serverNameInput)">Add Server using viewchild</button>
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint()">Add Server Blueprint</button>
+    </div>
+  </div>

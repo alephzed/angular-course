@@ -1,0 +1,20 @@
+<div class="container">
+  <app-cockpit 
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+
+  ></app-cockpit> <!-- example of component event binding-->
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first component</button>
+      <app-server-element 
+        *ngFor="let serverElement of serverElements"
+        [srvElement] = "serverElement"
+        [name] = "serverElement.name">
+        <p #bluePrintEm><em *ngIf="serverElement.type === 'blueprint'" >{{ serverElement.content }}</em></p> <!-- This will be rendered in the child component at the locatino of the ng-content directive -->
+      </app-server-element> <!-- example of component property binding. -->
+    </div>
+  </div>
+</div>

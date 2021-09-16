@@ -1,0 +1,12 @@
+<div
+class="panel panel-default"
+>
+<div class="panel-heading">{{ element.name }}</div>
+<div class="panel-heading" #heading>{{ name }}</div>
+<div class="panel-body">
+  <p>
+    <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+    <ng-content></ng-content> <!--Directive to allow html from the parent component to be rendered here -->
+  </p>
+</div>
+</div>
